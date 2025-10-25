@@ -4,19 +4,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        h6 {
+            font-size: 15px
+        }
+
         .h2-text {
             color: blue
+        }
+        .h6-text {
+            color: red
+        }
+        #h1-text {
+            font-size: 50px
+        }
+        div.Python > a {
+            color: green
+        }
+        ul li {
+            color: purple
+        }
+        input[type="text"] {
+            background-color: hotpink
+        }
+        input[type="text"]:hover {
+            background-color: red
+        }
+        a:hover {
+            color:black
+        }
+        li::marker {
+            color: orange
+        }
+        ul > li:nth-child(2) {
+            background-color: aqua
+        }
+        div.nth > p:nth-of-type(3) {
+            color: red
         }
     </style>
 </head>
 <body>
-<div>
-    <h1 id="h1-text"H1 text </h1>
-    <h2 class="h2-text"H2 text</h2>
-    <h6 class="h2-text"H6 text</h6>
-    <p>Native mobile emuilation of Google Chrome for Android and <span style="color green"Mobile Safari</span>. The same rendering engine works on your Desktop and in the Cloud.</p>
+<div class="Python">
+    <h1 id="h1-text">H1 text </h1>
+    <h2 class="h2-text">H2 text</h2>
+    <h6 class="h2-text  h6-text">H6 text</h6>
+    <p>Native mobile emulation of Google Chrome for Android and <span style="color green">Mobile Safari</span>. The same rendering engine works on your Desktop and in the Cloud.</p>
     <a href="https://playwright.dev/python/" target="_blank">Python</a>
-    <img alt="browsers.png" src="https://playwright.dev/python/img/logos/Browsers.png" style="width: 250px"
+    <img alt="browsers.png" src="https://playwright.dev/python/img/logos/Browsers.png" style="width: 250px">
     <ul>
         <li>Item 1</li>
         <li>Item 2</li>
@@ -27,12 +61,12 @@
         <li>Item 2</li>
         <li>Item 3</li>
     </ol>
-    <form action="/action" method="POST"
-          <input type="text" value="12345" placeholder="Text">
+    <form action="/action" method="POST">
+          <input type="text" value="123" placeholder="Text">
           <input required type="email" placeholder="Email">
           <input type="password" placeholder="Password">
           <textarea required placeholder="Text">12345</textarea>
-          <button type="submit"Text</button>
+          <button type="submit">Text</button>
     </form>
     <table>
         <thread>
@@ -55,6 +89,16 @@
         </tr>
         </tbody>
     </table>
+    <div class="nth">
+        <p>1</p>
+        <p>2</p>
+        <h6>3</h6>
+        <h5>4</h5>
+        <p>5</p>
+    </div>
+</div>
+<div class="JavaScript">
+    <a href="https://playwright.dev/python/" target="_blank">JavaScript</a>
 </div>
 </body>
 </html>
