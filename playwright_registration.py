@@ -4,19 +4,19 @@ with sync_playwright() as playwright:
     page = browser.new_page()
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
 
-# Pasting Email
+# Pasting registration Email
     registration_email_input = page.get_by_test_id('registration-form-email-input').locator('input')
     registration_email_input.fill("user.name@gmail.com")
 
-# Pasting Username
+# Pasting registration Username
     registration_username_input = page.get_by_test_id('registration-form-username-input').locator('input')
     registration_username_input.fill("username")
 
-# Pasting password
+# Pasting registration password
     registration_password_input = page.get_by_test_id('registration-form-password-input').locator('input')
     registration_password_input.fill("password")
 
-# Clicking Registration button
+# Clicking registration button
     registration_button = page.get_by_test_id('registration-page-registration-button')
     registration_button.click()
 
