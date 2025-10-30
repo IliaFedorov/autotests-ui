@@ -18,7 +18,7 @@ with sync_playwright() as playwright:
 
     wrong_email_or_password_alert = page.locator('//div[@data-testid="login-page-wrong-email-or-password-alert"]')
     expect(wrong_email_or_password_alert).to_be_visible()
-    expect(wrong_email_or_password_alert).to_have_text("Wrong email or password")
+    expect(wrong_email_or_password_alert).to_have_text("Wrong email or password123123")
 
     page.wait_for_timeout(5000)
 
