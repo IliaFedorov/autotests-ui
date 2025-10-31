@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright, expect
 with sync_playwright() as playwright:
+
     browser = playwright.chromium.launch(headless=True)
     page = browser.new_page()
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
@@ -21,6 +22,6 @@ with sync_playwright() as playwright:
     registration_button.click()
 
 # Checking header of Dashboard page presence and text
-    registration_page_dashboard_header = page.get_by_test_id('dashboard-toolbar-title-text')
-    expect(registration_page_dashboard_header).to_be_visible()
-    expect(registration_page_dashboard_header).to_have_text("Dashboard")
+    dashboard_page_title = page.get_by_test_id('dashboard-toolbar-title-text')
+    expect(dashboard_page_title).to_be_visible()
+    expect(dashboard_page_title).to_have_text("Dashboard")
