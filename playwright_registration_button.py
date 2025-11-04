@@ -11,15 +11,13 @@ with sync_playwright() as playwright:
     registration_button = page.get_by_test_id('registration-page-registration-button')
     expect(registration_button).to_be_disabled()
 
-    # Pasting registration Email
+    # Pasting registration Info
     registration_email_input = page.get_by_test_id('registration-form-email-input').locator('input')
     registration_email_input.fill("user.name@gmail.com")
 
-    # Pasting registration Username
     registration_username_input = page.get_by_test_id('registration-form-username-input').locator('input')
     registration_username_input.fill("username")
 
-    # Pasting registration password
     registration_password_input = page.get_by_test_id('registration-form-password-input').locator('input')
     registration_password_input.fill("password")
 
