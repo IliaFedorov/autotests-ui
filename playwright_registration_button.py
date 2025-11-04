@@ -25,5 +25,4 @@ with sync_playwright() as playwright:
 
     # Checking enabled registration button
 
-    registration_button.click()
     expect(registration_button).to_be_enabled()
