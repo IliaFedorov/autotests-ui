@@ -7,7 +7,6 @@ with sync_playwright() as playwright:
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
 
     # Checking disabled registration button
-
     registration_button = page.get_by_test_id('registration-page-registration-button')
     expect(registration_button).to_be_disabled()
 
@@ -22,5 +21,4 @@ with sync_playwright() as playwright:
     registration_password_input.fill("password")
 
     # Checking enabled registration button
-
     expect(registration_button).to_be_enabled()
