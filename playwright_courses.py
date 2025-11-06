@@ -3,7 +3,6 @@ with sync_playwright() as playwright:
 
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
-
     page = context.new_page()
 
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
