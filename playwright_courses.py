@@ -7,7 +7,7 @@ with sync_playwright() as playwright:
 
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
 
-    # Registering a new User:
+    # Registering a new User
     registration_email_input = page.get_by_test_id('registration-form-email-input').locator('input')
     registration_email_input.fill("user.name@gmail.com")
 
