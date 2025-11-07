@@ -23,7 +23,7 @@ with sync_playwright() as playwright:
     context.storage_state(path='browser-state.json')
 
 
-    #Reopening new browser window with context
+    #Opening new browser window with premade context
     context = browser.new_context(storage_state='browser-state.json')
     page = context.new_page()
 
