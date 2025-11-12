@@ -24,4 +24,3 @@ def test_successful_registration(chromium_page: Page):
         dashboard_page_title = chromium_page.get_by_test_id('dashboard-toolbar-title-text')
         expect(dashboard_page_title).to_be_visible()
         expect(dashboard_page_title).to_have_text("Dashboard")
-        chromium_page.wait_for_timeout(5000)
