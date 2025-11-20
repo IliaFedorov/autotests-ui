@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright, expect
 
 @pytest.mark.courses
 @pytest.mark.regression
-def test_empty_courses_list(chromium_page_with_state):
+def old_test_empty_courses_list(chromium_page_with_state):
 
     chromium_page_with_state.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
 
