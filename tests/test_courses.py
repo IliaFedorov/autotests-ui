@@ -10,6 +10,8 @@ def test_create_course(create_course_page: CreateCoursePage, courses_list_page: 
         'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create'
     )
 
+    create_course_page.sidebar.check_visible()
+    create_course_page.navbar.check_visible("username")
     create_course_page.check_visible_create_course_title()
     create_course_page.check_disabled_create_course_button()
     create_course_page.check_visible_image_preview_empty_view()
