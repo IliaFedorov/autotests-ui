@@ -10,8 +10,8 @@ class CreateCoursePage(BasePage):
 
         self.preview_image = page.get_by_test_id('create-course-preview-image-upload-widget-preview-image')
         self.preview_empty_view_icon = page.get_by_test_id('create-course-preview-empty-view-icon')
-        self.preview_empty_view_title = page.get_by_test_id('create-course-preview-empty-view-title=text')
-        self.preview_empty_view_description = page.get_by_test_id('create-course-preview-empty-description-text')
+        self.preview_empty_view_title = page.get_by_test_id('create-course-preview-empty-view-title-text')
+        self.preview_empty_view_description = page.get_by_test_id('create-course-preview-empty-view-description-text')
 
 
         self.preview_image_upload_icon = page.get_by_test_id('create-course-preview-image-upload-widget-info-icon')
@@ -68,7 +68,7 @@ class CreateCoursePage(BasePage):
         expect(self.preview_empty_view_title).to_have_text('No image selected')
 
         expect(self.preview_empty_view_description).to_be_visible()
-        expect(self.preview_empty_view_description).to_have_text('Preview of selected image will display here')
+        expect(self.preview_empty_view_description).to_have_text('Preview of selected image will be displayed here')
 
     def check_visible_image_upload_view(self, is_image_uploaded: bool = False):
         expect(self.preview_image_upload_icon).to_be_visible()
@@ -104,19 +104,19 @@ class CreateCoursePage(BasePage):
             min_score: str
     ):
         expect(self.create_course_title_input).to_be_visible()
-        expect(self.create_course_title_input).to_have_text(title)
+        expect(self.create_course_title_input).to_have_value(title)
 
         expect(self.create_course_estimated_time_input).to_be_visible()
-        expect(self.create_course_estimated_time_input).to_have_text(estimated_time)
+        expect(self.create_course_estimated_time_input).to_have_value(estimated_time)
 
         expect(self.create_course_description_textarea).to_be_visible()
-        expect(self.create_course_description_textarea).to_have_text(description)
+        expect(self.create_course_description_textarea).to_have_value(description)
 
         expect(self.create_course_max_score_input).to_be_visible()
-        expect(self.create_course_max_score_input).to_have_text(max_score)
+        expect(self.create_course_max_score_input).to_have_value(max_score)
 
         expect(self.create_course_min_score_input).to_be_visible()
-        expect(self.create_course_min_score_input).to_have_text(min_score)
+        expect(self.create_course_min_score_input).to_have_value(min_score)
 
     def fill_create_course_form(
             self,
@@ -145,7 +145,7 @@ class CreateCoursePage(BasePage):
         expect(self.exercises_title).to_be_visible()
         expect(self.exercises_title).to_have_text('Exercises')
 
-    def check_visible_create_exercises_button(self):
+    def check_visible_create_exercise_button(self):
         expect(self.create_exercise_button).to_be_visible()
 
     def click_create_exercises_button(self):
@@ -159,7 +159,7 @@ class CreateCoursePage(BasePage):
 
         expect(self.exercises_empty_view_description).to_be_visible()
         expect(self.exercises_empty_view_description).to_have_text(
-            'Click on "create exercise" button to create new exercise'
+            'Click on "Create exercise" button to create new exercise'
         )
 
     def click_delete_exercise_button(self, index: int):

@@ -8,7 +8,7 @@ class CoursesListPage(BasePage):
         self.courses_title = page.get_by_test_id('courses-list-toolbar-title-text')
         self.create_course_button = page.get_by_test_id('courses-list-toolbar-create-course-button')
 
-        self.course_title = page.get_by_test_id('courses-list-toolbar-title-text')
+        self.course_title = page.get_by_test_id('course-widget-title-text')
         self.course_image = page.get_by_test_id('course-preview-image')
         self.course_max_text = page.get_by_test_id('course-max-score-info-row-view-text')
         self.course_min_text = page.get_by_test_id('course-min-score-info-row-view-text')
