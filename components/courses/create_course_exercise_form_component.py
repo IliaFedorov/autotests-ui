@@ -1,5 +1,5 @@
 from components.base_component import BaseComponent
-from playwright.sync_api import expect, Page
+from playwright.sync_api import Page
 from elements.button import Button
 from elements.text import Text
 from elements.input import Input
@@ -10,18 +10,17 @@ class CreateCourseExerciseFormComponent(BaseComponent):
         super().__init__(page)
 
         self.delete_exercise_button = Button(
-            page,'create-course-exercise-{index}-box-toolbar-delete-exercise-button', 'Delete exercise'
+            page,"create-course-exercise-{index}-box-toolbar-delete-exercise-button", 'Delete exercise'
         )
         self.subtitle_text = Text(
-            page,'create-course-exercise-{index}-box-toolbar-subtitle-text','Exercise Subtitle'
+            page,"create-course-exercise-{index}-box-toolbar-subtitle-text",'Exercise subtitle'
         )
         self.title_input = Input(
-            page,'create-course-exercise-form-title-{index}-input','Exercise Title'
+            page,"create-course-exercise-form-title-{index}-input",'Exercise title'
         )
         self.description_input = Input(
-            page,'create-course-exercise-form-description-{index}-input','Exercise Description'
+            page,"create-course-exercise-form-description-{index}-input",'Exercise description'
         )
-
 
     def click_delete_button(self, index: int):
         self.delete_exercise_button.click(index=index)

@@ -21,7 +21,3 @@ class BaseElement:
         locator = self.get_locator(**kwargs)
         expect(locator).to_have_text(text)
 
-
-
-
-

@@ -1,6 +1,8 @@
 from components.base_component import BaseComponent
 from components.courses.course_view_menu_component import CourseViewMenuComponent
 from playwright.sync_api import Page, expect
+from elements.text import Text
+from elements.image import Image
 
 class CourseViewComponent(BaseComponent):
     def __init__(self, page: Page):
@@ -8,6 +10,11 @@ class CourseViewComponent(BaseComponent):
 
         self.menu = CourseViewMenuComponent(page)
 
+        #self.title = Text(page, 'course-widget-title-text', 'Course view title')
+        #self.image = Image(page, 'course-preview-image', 'Course preview image')
+        #self.max_text = Text(page, 'course-max-score-info-row-view-text', 'Course max score')
+        #self.min_text = Text(page, 'course-min-score-info-row-view-text', 'Course min score')
+        #self.estimated_time = Text(page, 'course-estimated-time-info-row-view-text', 'Course estimated time')
         self.title = page.get_by_test_id('course-widget-title-text')
         self.image = page.get_by_test_id('course-preview-image')
         self.max_text = page.get_by_test_id('course-max-score-info-row-view-text')
@@ -15,6 +22,20 @@ class CourseViewComponent(BaseComponent):
         self.estimated_time = page.get_by_test_id('course-estimated-time-info-row-view-text')
 
     def check_visible(self, index: int, title: str, max_score: str, min_score: str, estimated_time: str):
+        #self.image.check_visible().nth(index)
+
+        #self.title.check_visible().nth(index)
+        #self.title.check_have_text(title).nth(index)
+
+        #self.max_text.check_visible().nth(index)
+        #self.max_text.check_have_text(f'Max score: {max_score}').nth(index)
+
+        #self.min_text.check_visible().nth(index)
+        #self.min_text.check_have_text(f'Min score: {min_score}').nth(index)
+
+        #self.estimated_time.check_visible().nth(index)
+        #self.estimated_time.check_have_text(f'Estimated time: {estimated_time}').nth(index)
+
         expect(self.image.nth(index)).to_be_visible()
 
         expect(self.title.nth(index)).to_be_visible()

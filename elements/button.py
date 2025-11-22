@@ -11,7 +11,3 @@ class Button (BaseElement):
     def check_disabled(self, **kwargs):
         locator = self.get_locator(**kwargs)
         expect(locator).to_be_disabled()
-
-    def click(self, **kwargs):
-        locator = self.get_locator(**kwargs)
-        locator.click()

@@ -12,4 +12,4 @@ class Input(BaseElement):
 
     def check_have_value(self, value: str, **kwargs):
         locator = self.get_locator(**kwargs)
-        expect(locator).to_have_value()
+        expect(locator).to_have_value(value)
