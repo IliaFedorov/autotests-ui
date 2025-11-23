@@ -7,6 +7,43 @@ from pages.courses.courses_list_page import CoursesListPage
 @pytest.mark.regression
 class TestCourses:
 
+    def test_edit_course(
+            self,
+            create_course_page: CreateCoursePage,
+            courses_list_page: CoursesListPage
+    ):
+        create_course_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
+
+        create_course_page.create_course_form.fill(
+            title="Playwright2", estimated_time="4 weeks", description="Playwright2", max_score="111", min_score="11"
+        )
+        create_course_page.create_course_form.check_visible(
+            title="Playwright2", estimated_time="4 weeks", description="Playwright2", max_score="111", min_score="11"
+        )
+
+        create_course_page.image_upload_widget.upload_preview_image('./testdata/files/image.png')
+        create_course_page.image_upload_widget.check_visible(is_image_uploaded=True)
+
+        create_course_page.create_course_toolbar.click_create_course_button()
+
+
+        courses_list_page.course_view.check_visible(
+            index=0, title="Playwright2", estimated_time="4 weeks", max_score="111", min_score="11"
+        )
+
+        courses_list_page.course_view.menu.click_edit(index=0)
+
+
+        create_course_page.create_course_form.fill(
+            title="Playwright3", estimated_time="3 weeks", description="Playwright3", max_score="333", min_score="33"
+        )
+        create_course_page.create_course_toolbar.click_create_course_button()
+
+
+        courses_list_page.course_view.check_visible(
+            index=0, title="Playwright3", estimated_time="3 weeks", max_score="333", min_score="33"
+        )
+
     def test_empty_courses_list(self, courses_list_page: CoursesListPage):
         courses_list_page.visit(
             'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses'
