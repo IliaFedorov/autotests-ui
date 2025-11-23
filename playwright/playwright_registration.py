@@ -21,7 +21,7 @@ with sync_playwright() as playwright:
     registration_button = page.get_by_test_id('registration-page-registration-button')
     registration_button.click()
 
-    context.storage_state(path='browser-state.json')
+    context.storage_state(path='../browser-state.json')
 
 # Checking header of Dashboard page presence and text
 #    dashboard_page_title = page.get_by_test_id('dashboard-toolbar-title-text')
