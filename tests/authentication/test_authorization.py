@@ -24,6 +24,7 @@ from tools.routes import AppRoute
 @allure.sub_suite(AllureStory.AUTHORIZATION)
 class TestAuthorization:
 
+    @pytest.mark.xdist_group(name="authorization-group")
     @allure.tag(AllureTag.USER_LOGIN)
     @allure.title('Check displaying of dashboard page')
     @allure.severity(Severity.BLOCKER)
@@ -47,6 +48,7 @@ class TestAuthorization:
         dashboard_page.dashboard_toolbar.check_visible()
         dashboard_page.sidebar.check_visible()
 
+    @pytest.mark.xdist_group(name="authorization-group")
     @pytest.mark.parametrize(
         'email, password',
         [
@@ -55,7 +57,6 @@ class TestAuthorization:
             ('  ', 'password')
         ]
     )
-
     @allure.tag(AllureTag.USER_LOGIN)
     @allure.title("User login with wrong email or password")
     @allure.severity(Severity.CRITICAL)
