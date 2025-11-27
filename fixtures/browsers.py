@@ -8,21 +8,23 @@ from config import settings
 from tools.routes import AppRoute
 
 
-@pytest.fixture
-def chromium_page(request: SubRequest, playwright: Playwright) -> Page: # type: ignore
-
-    yield from initialize_playwright_page( # type: ignore
-        playwright,
-        test_name=request.node.name
-    )
-
-@pytest.fixture
-def chromium_page_with_state(initialize_browser_state, playwright: Playwright, request: SubRequest) -> Page: # type: ignore
+@pytest.fixture(params=settings.browsers)
+def page(request: SubRequest, playwright: Playwright) -> Page: # type: ignore
 
     yield from initialize_playwright_page( # type: ignore
         playwright,
         test_name=request.node.name,
-    storage_state=settings.browser_state_file
+        browser_type=request.param
+    )
+
+@pytest.fixture(params=settings.browsers)
+def page_with_state(initialize_browser_state, playwright: Playwright, request: SubRequest) -> Page: # type: ignore
+
+    yield from initialize_playwright_page( # type: ignore
+        playwright,
+        test_name=request.node.name,
+        browser_type=request.param,
+        storage_state=settings.browser_state_file
     )
 
 @pytest.fixture(scope='session')
