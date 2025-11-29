@@ -50,8 +50,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v5
+        with:
+          name: my-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.13
