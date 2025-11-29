@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: |
@@ -40,7 +40,7 @@ jobs:
           path: gh-pages
 
       - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@v1.12
+        uses: simple-elf/allure-report-action@v1.13
         if: always()
         with:
           allure_results: allure-results
