@@ -39,6 +39,10 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+  publish-report:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.13
         if: always()
@@ -52,11 +56,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./allure-history
-
-        #env:
-        #  PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #  PUBLISH_BRANCH: gh-pages
-        #  PUBLISH_DIR: allure-history
-
-
-
