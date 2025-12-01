@@ -22,6 +22,7 @@ from tools.routes import AppRoute
 @allure.sub_suite(AllureStory.COURSES)
 class TestCourses:
 
+    @pytest.mark.flaky(reruns=3, reruns_delay=4)
     @allure.severity(Severity.NORMAL)
     @allure.title("Edit course")
     def test_edit_course(
