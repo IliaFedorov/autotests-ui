@@ -34,7 +34,7 @@ jobs:
       - name: restore coverage history
         uses: actions/cache/restore@v4
         with:
-          path: coverage-history.jsons
+          path: coverage-history.json
           key: coverage-history-${{github.run_id}}
           restore-keys: |
             coverage-history-
@@ -80,8 +80,6 @@ jobs:
       - uses: actions/download-artifact@v5
         with:
           name: allure-results-artifact
-      - name: Display structure of downloaded files
-        run: ls -R
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.13
