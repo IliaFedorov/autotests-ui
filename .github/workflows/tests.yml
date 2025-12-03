@@ -69,7 +69,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-artifact
+          name: allure-results
           path: ./allure-results/
 
   publish-report:
@@ -79,7 +79,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v5
         with:
-          name: allure-results-artifact
+          name: allure-results
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.13
