@@ -70,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: ./allure-results/
+          path: .
 
   publish-report:
     needs: run-tests
