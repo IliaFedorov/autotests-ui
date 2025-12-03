@@ -67,6 +67,8 @@ class TestCourses:
         courses_list_page.toolbar.check_visible()
         courses_list_page.check_visible_empty_view()
 
+
+
     @allure.severity(Severity.CRITICAL)
     @allure.title("Create course")
     def test_create_course(self, create_course_page: CreateCoursePage, courses_list_page: CoursesListPage):
