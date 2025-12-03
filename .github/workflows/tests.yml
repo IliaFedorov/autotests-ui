@@ -79,7 +79,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v5
         with:
-          name: my-artifact
+          name: allure-results
       - name: Display structure of downloaded files
         run: ls -R
 
